@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Polygon">
+        <attr name="textColor" format="color" />
+        <attr name="eageColor" format="color" />
+        <attr name="areaColor" format="color" />
+        <attr name="loopCount" format="integer" />
+        <attr name="eageCount" format="integer" />
+    </declare-styleable>
+</resources>
