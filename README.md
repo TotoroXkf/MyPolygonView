@@ -1,6 +1,9 @@
 # MyPolygonView
 > 一个自定义View，多边形的统计图
 
+- [简书讲解](http://www.jianshu.com/p/9437e4ddd839)
+
+### 预览
 ![预览](images/image.jpg)
 
 ### 如何使用
