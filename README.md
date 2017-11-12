@@ -1,4 +1,4 @@
 # MyPolygonView
 > 一个自定义View，多边形的统计图
 
-![](https://github.com/TotoroXkf/MyPolygonView/blob/master/images/image.jpg)
+<img src="images/image.png" width="400" height="800" alt=""/>
