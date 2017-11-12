@@ -9,12 +9,15 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PolygonView extends View {
+    public static final String TAG = "Totoro";
+
     private Paint eagePaint;
     private Paint areaPaint;
     private Paint textPaint;
@@ -153,8 +156,6 @@ public class PolygonView extends View {
             canvas.drawPath(path, eagePaint);
         }
     }
-
-    public static final String TAG = "Totoro";
 
     /*
         绘制多边形和每一层
