@@ -19,7 +19,7 @@
   在app目录下的build.gradle文件中添加添加
 ````
   dependencies {
-		compile 'com.github.TotoroXkf:MyPolygonView:v1.0.0'
+		compile 'com.github.TotoroXkf:MyPolygonView:v1.0.1'
 	}
 ````
 
