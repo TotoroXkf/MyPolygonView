@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PolygonView.iml" filepath="$PROJECT_DIR$/PolygonView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyPolygonView.iml" filepath="$PROJECT_DIR$/MyPolygonView.iml" />
       <module fileurl="file://$PROJECT_DIR$/polygonview/polygonview.iml" filepath="$PROJECT_DIR$/polygonview/polygonview.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
