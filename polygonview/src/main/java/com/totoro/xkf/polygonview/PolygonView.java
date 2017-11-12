@@ -93,13 +93,18 @@ public class PolygonView extends View {
         drawText(canvas);
     }
 
+    /*
+        绘制文字
+     */
     private void drawText(Canvas canvas) {
         if (pointName == null) {
             return;
         }
-
+        //绘制文字的难点在于无法最好的适配屏幕的位置，会发生难以控制的偏倚
         for (int i = 0; i < pointName.size(); i++) {
+            //解决办法就是让文字在不同的角度也发生旋转，并且在x轴上减去一定的数值来保证正确的位置
             float currentAngle = i * angle;
+            //180度需要也别的处理，让它正着显示，不然就是倒着的
             if (currentAngle == 180) {
                 float currentX = maxPointXList.get(i) * 1.1f;
                 float currentY = maxPointYList.get(i) * 1.1f;
@@ -109,6 +114,7 @@ public class PolygonView extends View {
                 canvas.save();
                 float currentX = maxPointXList.get(0) * 1.1f;
                 float currentY = maxPointYList.get(0) * 1.1f;
+                //旋转画布，达到旋转文字的效果
                 canvas.rotate(currentAngle);
                 canvas.drawText(pointName.get(i), currentX - (textPaint.getTextSize() / 4)
                         * (pointName.get(i).length()), currentY, textPaint);
@@ -117,8 +123,12 @@ public class PolygonView extends View {
         }
     }
 
+    /*
+        位置个方向值覆盖的区域
+     */
     private void drawArea(Canvas canvas) {
         Path path = new Path();
+        //原理就是用path根据各方向值创建一个封闭的区域，然后填充
         for (int i = 0; i < eageCount; i++) {
             float rate = pointValue.get(i);
             float currentX = maxPointXList.get(i) * rate;
@@ -132,7 +142,9 @@ public class PolygonView extends View {
         path.close();
         canvas.drawPath(path, areaPaint);
     }
-
+    /*
+        画出从中心向各顶点的连线
+     */
     private void drawLine(Canvas canvas) {
         Path path = new Path();
         for (int i = 0; i < eageCount; i++) {
@@ -144,10 +156,14 @@ public class PolygonView extends View {
 
     public static final String TAG = "Totoro";
 
+    /*
+        绘制多边形和每一层
+     */
     private void drawPolygon(Canvas canvas) {
         Path path = new Path();
         for (int i = 0; i < loopCount; i++) {
             path.reset();
+            //依据最大半径和角度来判断每一层点的位置
             float rate = computeRate(i + 1, loopCount);
             for (int j = 0; j < eageCount; j++) {
                 float currentX = maxPointXList.get(j) * rate;
@@ -167,7 +183,9 @@ public class PolygonView extends View {
         return value / max;
     }
 
-
+    /*
+        计算最大半径，之后的位置都是基于最大半径的比例
+     */
     public void computeMaxPoint() {
         maxPointXList = new ArrayList<>();
         maxPointYList = new ArrayList<>();
@@ -182,6 +200,9 @@ public class PolygonView extends View {
         }
     }
 
+    /*
+        用属性动画绘制组件
+     */
     public void draw() {
         if (canDraw()) {
             final Float[] trueValues = pointValue.toArray(new Float[pointValue.size()]);
@@ -201,9 +222,16 @@ public class PolygonView extends View {
         }
     }
 
+    /*
+        判断是否可以绘制
+        条件为
+        loopCount(绘制层数)必须大于0
+        eageCount(边数)必须大于3
+        pointValue(各方向值)不能为null，且size不能小于边数
+     */
     private boolean canDraw() {
         if (loopCount <= 0 || eageCount <= 2 || pointValue == null
-                || pointValue == null || pointValue.size() < eageCount) {
+                || pointValue.size() < eageCount) {
             return false;
         }
         return true;
