@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PolygonView extends View {
-    public static final String TAG = "Totoro";
-
     private Paint eagePaint;
     private Paint areaPaint;
     private Paint textPaint;
