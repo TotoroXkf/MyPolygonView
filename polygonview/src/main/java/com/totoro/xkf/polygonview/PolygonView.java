@@ -67,9 +67,9 @@ public class PolygonView extends View {
         initPaint();
         setTextColor(typedArray.getColor(R.styleable.Polygon_textColor, Color.BLACK));
         setLoopCount(typedArray.getInteger(R.styleable.Polygon_loopCount, 0));
-        setEageCount(typedArray.getInteger(R.styleable.Polygon_eageCount, 0));
+        setEageCount(typedArray.getInteger(R.styleable.Polygon_edgeCount, 0));
         setAreaColor(typedArray.getColor(R.styleable.Polygon_areaColor, Color.BLUE));
-        setEageColor(typedArray.getColor(R.styleable.Polygon_eageColor, Color.GRAY));
+        setEageColor(typedArray.getColor(R.styleable.Polygon_edgeColor, Color.GRAY));
         typedArray.recycle();
     }
 
@@ -125,7 +125,7 @@ public class PolygonView extends View {
     }
 
     /*
-        位置个方向值覆盖的区域
+        绘制个方向值覆盖的区域
      */
     private void drawArea(Canvas canvas) {
         Path path = new Path();

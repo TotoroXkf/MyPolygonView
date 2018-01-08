@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:areaColor="@android:color/holo_blue_light"
-        app:eageColor="@android:color/black"
-        app:eageCount="6"
+        app:edgeColor="@android:color/black"
+        app:edgeCount="6"
         app:loopCount="4"
         app:textColor="@android:color/black" />
 </FrameLayout>
