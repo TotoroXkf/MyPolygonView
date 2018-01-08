@@ -1,6 +1,9 @@
 # MyPolygonView
 > 一个自定义View，多边形的统计图
 
+- [简书讲解](http://www.jianshu.com/p/9437e4ddd839)
+
+### 预览
 ![预览](images/image.jpg)
 
 ### 如何使用
@@ -19,7 +22,7 @@
   在app目录下的build.gradle文件中添加添加
 ````
   dependencies {
-		compile 'com.github.TotoroXkf:MyPolygonView:v1.0.1'
+		compile 'com.github.TotoroXkf:MyPolygonView:V1.0.2'
 	}
 ````
 
