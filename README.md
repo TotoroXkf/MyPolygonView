@@ -1,7 +1,7 @@
 # MyPolygonView
 > 一个自定义View，多边形的统计图
 
-- [简书讲解](http://www.jianshu.com/p/9437e4ddd839)
+- [博客讲解](https://totoroxkf.github.io/2018/01/06/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%BB%9F%E8%AE%A1%E5%9B%BE/)
 
 ### 预览
 ![预览](images/image.jpg)
@@ -22,7 +22,7 @@
   在app目录下的build.gradle文件中添加添加
 ````
   dependencies {
-		compile 'com.github.TotoroXkf:MyPolygonView:V1.0.2'
+		compile 'com.github.TotoroXkf:MyPolygonView:V1.0.3'
 	}
 ````
 
@@ -35,8 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:areaColor="@android:color/holo_blue_light"
-        app:eageColor="@android:color/black"
-        app:eageCount="6"
+        app:edgeColor="@android:color/black"
+        app:edgeCount="6"
         app:loopCount="4"
         app:textColor="@android:color/black" />
 ````
